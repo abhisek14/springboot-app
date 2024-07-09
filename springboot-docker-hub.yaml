@@ -29,6 +29,6 @@ spec:
     app: angular-app
   ports:
     - protocol: TCP
-      port: 9435
+      port: 9438
       targetPort: 9438
   type: NodePort
