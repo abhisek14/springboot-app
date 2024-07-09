@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: my-ak-deployment
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: angular-app
@@ -17,7 +17,7 @@ spec:
         image: abhisek147/springbootapp:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 8085
+        - containerPort: 9438
 # service type loadbalancer
 ---
 apiVersion: v1
@@ -29,6 +29,6 @@ spec:
     app: angular-app
   ports:
     - protocol: TCP
-      port: 8085
-      targetPort: 8085
-  type: LoadBalancer
+      port: 9435
+      targetPort: 9438
+  type: NodePort
