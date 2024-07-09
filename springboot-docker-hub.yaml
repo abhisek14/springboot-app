@@ -17,7 +17,7 @@ spec:
         image: abhisek147/springbootapp:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 9438
+        - containerPort: 8085
 # service type loadbalancer
 ---
 apiVersion: v1
@@ -29,6 +29,6 @@ spec:
     app: angular-app
   ports:
     - protocol: TCP
-      port: 9438
-      targetPort: 9438
+      port: 8085
+      targetPort: 8085
   type: NodePort
